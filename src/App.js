@@ -28,7 +28,7 @@ class App extends Component {
     render() {
         return (
             <div>
-                <ListContacts contacts={contacts}/>
+                <ListContacts contacts={this.state.contacts}/>
             </div>
         )
     }
