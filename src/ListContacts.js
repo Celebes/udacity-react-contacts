@@ -2,10 +2,9 @@ import React, {Component} from 'react';
 
 class ListContacts extends Component {
     render() {
-        const contacts = this.props.contacts;
         return (
             <ol className='contact-list'>
-                {contacts.map(contact => (
+                {this.props.contacts.map(contact => (
                     <li key={contact.id} className='contact-list-item'>
                         <div className='contact-avatar' style={{
                             backgroundImage: `url(${contact.avatarURL})`
@@ -14,7 +13,7 @@ class ListContacts extends Component {
                             <p>{contact.name}</p>
                             <p>{contact.email}</p>
                         </div>
-                        <button className='contact-remove'>
+                        <button onClick={() => this.props.onDeleteContact(contact)} className='contact-remove'>
                             Remove
                         </button>
                     </li>

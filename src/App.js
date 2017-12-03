@@ -25,10 +25,20 @@ class App extends Component {
         ]
     };
 
+    /*
+        fat arrow notation assures us that 'this' will point to App component
+        even when called from within ListContacts component (or any other)
+     */
+    removeContact = (contact) => {
+        this.setState((prevState) => ({
+            contacts: prevState.contacts.filter((c) => c.id !== contact.id)
+        }))
+    }
+
     render() {
         return (
             <div>
-                <ListContacts contacts={this.state.contacts}/>
+                <ListContacts onDeleteContact={this.removeContact} contacts={this.state.contacts}/>
             </div>
         )
     }
