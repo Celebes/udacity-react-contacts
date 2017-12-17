@@ -25,7 +25,7 @@ class ListContacts extends Component {
     render() {
         let showingContacts;
         // destructuring objects
-        const {contacts, onDeleteContact, onNavigate} = this.props
+        const {contacts, onDeleteContact} = this.props
         const {query} = this.state
 
         if (query) {
@@ -39,7 +39,7 @@ class ListContacts extends Component {
 
         return (
             <div className='list-contacts'>
-                <div class="list-contacts-top">
+                <div className="list-contacts-top">
                     <input className='search-contacts'
                            type='text'
                            placeholder='Search contacts'
